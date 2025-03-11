@@ -106,6 +106,9 @@ def main(customer_file, profile_file, start_date, end_date, out_path=None, start
     fraud_profile = Profile({**profile_fraud_obj})
 
     inter_val = (end_date - start_date).days - 7
+    # new edit here
+    if inter_val < 1:
+        inter_val = 1
     # for each customer, if the customer fits this profile
     # generate appropriate number of transactions
     with open(customer_file, 'r') as f:
@@ -179,4 +182,3 @@ if __name__ == '__main__':
 
     main(customer_file, profile_file, start_date, end_date, out_path)
 
-    

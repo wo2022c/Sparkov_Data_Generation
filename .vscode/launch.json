@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Debug datagen.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/datagen.py",
+            "console": "integratedTerminal",
+            "args": ["-n", "100", "-o", "./output", "01-01-2025", "01-02-2025"]
+        }
+    ]
+}
