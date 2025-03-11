@@ -94,5 +94,9 @@ if __name__ == '__main__':
             customer_file_offset_start += chunk_size
             customer_file_offset_end = min(num_cust - 1, customer_file_offset_end + chunk_size)
 
-    with Pool() as p:
-        p.starmap(datagen_transactions, args_array)
+    # multiprocessing
+    # with Pool() as p:
+    #     p.starmap(datagen_transactions, args_array)
+    #mono processing
+    for args in args_array:
+        datagen_transactions(*args)
